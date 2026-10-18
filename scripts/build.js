@@ -15,14 +15,14 @@ const EMAIL_LINK = `<a href="mailto:${EMAIL}">${EMAIL}</a>`;
 const STORE_CAMPAIGNS = ['hero', 'footer', 'support'];
 
 /**
- * @typedef {{ path: string, htmlLang: string, hreflang: string, ogLocale: string, storeHl: string, utmMedium: string, i18nFile: string }} Locale
+ * @typedef {{ path: string, htmlLang: string, hreflang: string, ogLocale: string, storeHl: string, utmMedium: string, i18nFile: string, flag: string }} Locale
  * @type {Locale[]}
  */
 const LOCALES = [
-  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: 'en', utmMedium: 'en', i18nFile: 'en.json' },
-  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', utmMedium: 'es', i18nFile: 'es.json' },
-  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', utmMedium: 'pt-br', i18nFile: 'pt-br.json' },
-  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json' },
+  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: 'en', utmMedium: 'en', i18nFile: 'en.json', flag: '🇬🇧' },
+  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', utmMedium: 'es', i18nFile: 'es.json', flag: '🇪🇸' },
+  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', utmMedium: 'pt-br', i18nFile: 'pt-br.json', flag: '🇧🇷' },
+  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json', flag: '🇫🇷' },
 ];
 
 const PAGES = ['index', 'support', 'privacy', 'welcome', 'uninstall'];
@@ -132,7 +132,8 @@ function langSwitcher(currentPath, page, dictsByPath) {
     const native = dictsByPath[loc.path || 'en'].lang_native;
     const selected = loc.path === currentPath ? ' selected' : '';
     const href = pageHref(loc.path, page);
-    return `<option value="${escapeHtmlAttr(href)}" data-lang="${escapeHtmlAttr(loc.path || 'en')}"${selected}>${escapeHtmlAttr(native)}</option>`;
+    const labelText = `${loc.flag} ${native}`;
+    return `<option value="${escapeHtmlAttr(href)}" data-lang="${escapeHtmlAttr(loc.path || 'en')}"${selected}>${escapeHtmlAttr(labelText)}</option>`;
   }).join('');
   const label = dictsByPath[currentPath || 'en'].nav.lang_label;
   return `<label class="lang-switch"><span class="visually-hidden">${escapeHtmlAttr(label)}</span><select data-lang-switch aria-label="${escapeHtmlAttr(label)}">${options}</select></label>`;
