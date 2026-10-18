@@ -97,4 +97,68 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/privacy"/>
   </url>
+  <url>
+    <loc>https://alisearch.github.io/welcome</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/welcome"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/welcome"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/welcome"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/welcome"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/welcome"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/es/welcome</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/welcome"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/welcome"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/welcome"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/welcome"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/welcome"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/pt-br/welcome</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/welcome"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/welcome"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/welcome"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/welcome"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/welcome"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/fr/welcome</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/welcome"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/welcome"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/welcome"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/welcome"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/welcome"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/uninstall</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/uninstall"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/es/uninstall</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/uninstall"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/pt-br/uninstall</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/uninstall"/>
+  </url>
+  <url>
+    <loc>https://alisearch.github.io/fr/uninstall</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisearch.github.io/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/uninstall"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/uninstall"/>
+  </url>
 </urlset>

@@ -28,7 +28,7 @@
 <link rel="icon" href="/assets/icon-32.png">
 <link rel="stylesheet" href="/assets/style.css">
 <script>
-(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else if(path==='/welcome')twin='/'+p+'/welcome';else if(path==='/uninstall')twin='/'+p+'/uninstall';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
 </script>
 </head>
 <body>
@@ -43,10 +43,10 @@
 
 <main class="wrap">
   <h1>Privacy policy</h1>
-  <p class="lead">Last updated: 16 October 2026</p>
+  <p class="lead">Last updated: 18 October 2026</p>
   
 
-  <p class="note"><strong>In short:</strong> AliSearch has no ads, no analytics and no tracking. It works on AliExpress search pages only. Data leaves your browser in two cases: when you open a product through AliSearch (to create the affiliate link), and when you choose to send us feedback.</p>
+  <p class="note"><strong>In short:</strong> AliSearch has no ads, no analytics and no tracking. It works on AliExpress search pages only. Data leaves your browser in three cases: when you open a product through AliSearch (to create the affiliate link), when you choose to send us feedback, and – only if you submit it – when you answer the optional uninstall survey.</p>
 
   <h2>Who is responsible</h2>
   <p>AliSearch is developed and operated by an individual developer in the European Union. Contact for any privacy question: <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a>.</p>
@@ -73,14 +73,21 @@
       <td>To answer you and fix problems</td>
       <td>As long as needed to handle your message; deleted on request</td>
     </tr>
+    <tr>
+      <td>You submit the optional uninstall survey</td>
+      <td>The reason you selected, any free-text note you add, your browser version (user agent), and – if present in the page address – the AliSearch version. The uninstall page address may include only the language and that version; it does not include a user ID.</td>
+      <td>To understand why people remove the extension and improve it</td>
+      <td>As long as needed to review the answers; deleted on request</td>
+    </tr>
   </table>
+  <p class="note">When you remove AliSearch, Chrome may open the uninstall survey with a <code>version</code> query parameter (for example <code>?version=1.1.0</code>) so we know which release you used. That parameter is not a personal identifier.</p>
   <p>We do not sell your data, do not use it for advertising, and do not use it for any purpose other than the ones above.</p>
 
   <h2>Service providers</h2>
   <ul>
     <li><strong>Cloudflare</strong> runs our server (Cloudflare Workers) and database (Cloudflare D1).</li>
     <li><strong>AliExpress Affiliate API</strong> receives the product address to create the affiliate link. After the redirect you are on AliExpress, and the AliExpress privacy policy applies – AliExpress may set cookies to attribute the purchase.</li>
-    <li><strong>Resend</strong> delivers feedback messages to our mailbox (Google Gmail).</li>
+    <li><strong>Resend</strong> delivers feedback and uninstall-survey messages to our mailbox (Google Gmail).</li>
   </ul>
 
   <h2>Affiliate links</h2>
@@ -90,6 +97,7 @@
   <ul>
     <li>Product redirects: our legitimate interest in providing the feature you use and keeping the service working (Article 6(1)(f) GDPR).</li>
     <li>Feedback: your consent, given by sending the message (Article 6(1)(a) GDPR). You can withdraw it at any time.</li>
+    <li>Uninstall survey: your consent, given by submitting the form (Article 6(1)(a) GDPR). The survey is optional.</li>
   </ul>
 
   <h2>Your rights</h2>

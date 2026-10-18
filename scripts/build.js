@@ -25,7 +25,7 @@ const LOCALES = [
   { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json' },
 ];
 
-const PAGES = ['index', 'support', 'privacy'];
+const PAGES = ['index', 'support', 'privacy', 'welcome', 'uninstall'];
 
 const checkMode = process.argv.includes('--check');
 
@@ -141,7 +141,7 @@ function langSwitcher(currentPath, page, dictsByPath) {
 function prefRedirectScript(localePath) {
   if (localePath) return '';
   return `<script>
-(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else if(path==='/welcome')twin='/'+p+'/welcome';else if(path==='/uninstall')twin='/'+p+'/uninstall';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
 </script>`;
 }
 

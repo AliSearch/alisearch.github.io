@@ -87,10 +87,94 @@ th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom
 th { background: var(--panel); }
 footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 20px 0 32px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 28px 0;
+  display: grid;
+  gap: 14px;
+}
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px 14px;
+  align-items: start;
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.steps li::before {
+  content: counter(step);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1 / span 2;
+}
+.steps strong { font-size: 17px; }
+.steps span { color: var(--muted); }
+.demo { margin: 28px 0 8px; }
+.demo img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: block;
+}
+.cta-row { margin: 20px 0 8px; }
+.muted-hint { color: var(--muted); font-size: 15px; margin-top: 0; }
+.uninstall-form { margin-top: 20px; display: grid; gap: 12px; }
+.uninstall-form fieldset { border: 0; padding: 0; margin: 0; }
+.reason-list { display: grid; gap: 8px; }
+.reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  cursor: pointer;
+}
+.reason:has(input:checked) {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.reason input { margin-top: 4px; }
+.details-label { font-weight: 600; }
+.uninstall-form textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--fg);
+  resize: vertical;
+}
+.uninstall-form .cta {
+  border: 0;
+  cursor: pointer;
+  justify-self: start;
+  font: inherit;
+}
+.form-error { color: #b91c1c; margin: 0; }
+.uninstall-thanks h2 { margin-top: 0; }
 @media (max-width: 560px) {
   body { font-size: 16px; }
   h1 { font-size: 28px; }
   header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
   .header-right { width: 100%; justify-content: space-between; }
   .lang-switch select { max-width: 140px; }
+  .steps li { grid-template-columns: 32px 1fr; }
 }

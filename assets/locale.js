@@ -51,7 +51,15 @@
 
   function currentLangFromPath() {
     var path = location.pathname.replace(/\/+$/, '') || '/';
-    if (path === '/' || path === '/support' || path === '/privacy') return 'en';
+    if (
+      path === '/' ||
+      path === '/support' ||
+      path === '/privacy' ||
+      path === '/welcome' ||
+      path === '/uninstall'
+    ) {
+      return 'en';
+    }
     var m = path.match(/^\/(es|pt-br|fr)(?:\/|$)/);
     return m ? m[1] : 'en';
   }
@@ -61,6 +69,8 @@
     if (path === '/' || path === '/es' || path === '/pt-br' || path === '/fr') return 'index';
     if (/\/support$/.test(path)) return 'support';
     if (/\/privacy$/.test(path)) return 'privacy';
+    if (/\/welcome$/.test(path)) return 'welcome';
+    if (/\/uninstall$/.test(path)) return 'uninstall';
     return 'index';
   }
 

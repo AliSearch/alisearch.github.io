@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{welcome.title}}</title>
+<meta name="description" content="{{welcome.description}}">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang_links}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alternates}}
+<meta property="og:title" content="{{welcome.og_title}}">
+<meta property="og:description" content="{{welcome.og_description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+{{pref_redirect_script}}
+</head>
+<body>
+{{lang_banner_slot}}
+<header><div class="wrap header-bar">
+  <a class="brand" href="{{home_href}}"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="{{home_href}}">{{nav.home}}</a><a href="{{support_href}}">{{nav.support}}</a><a href="{{privacy_href}}">{{nav.privacy}}</a></nav>
+    {{lang_switcher}}
+  </div>
+</div></header>
+
+<main class="wrap welcome">
+  <h1>{{welcome.h1}}</h1>
+  <p class="lead">{{welcome.lead}}</p>
+
+  <ol class="steps">
+    <li>
+      <strong>{{welcome.step1_title}}</strong>
+      <span>{{welcome.step1_body}}</span>
+    </li>
+    <li>
+      <strong>{{welcome.step2_title}}</strong>
+      <span>{{welcome.step2_body}}</span>
+    </li>
+    <li>
+      <strong>{{welcome.step3_title}}</strong>
+      <span>{{welcome.step3_body}}</span>
+    </li>
+  </ol>
+
+  <figure class="demo">
+    <img src="/assets/demo-gif.gif" width="800" height="450" alt="{{welcome.demo_alt}}">
+  </figure>
+
+  <p class="cta-row">
+    <a class="cta" href="{{welcome.try_url}}" rel="noopener noreferrer" target="_blank">{{welcome.cta}}</a>
+  </p>
+  <p class="muted-hint">{{welcome.cta_hint}}</p>
+</main>
+
+<footer><div class="wrap">
+  <span>{{footer.copyright}}</span>
+  <span><a href="{{home_href}}">{{footer.home}}</a> · <a href="{{support_href}}">{{footer.support}}</a> · <a href="{{privacy_href}}">{{footer.privacy_policy}}</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+</body>
+</html>

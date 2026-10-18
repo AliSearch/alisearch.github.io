@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to AliSearch</title>
+<meta name="description" content="Quick start: how AliSearch shows every AliExpress variant price in search results.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://alisearch.github.io/welcome">
+<link rel="alternate" hreflang="en" href="https://alisearch.github.io/welcome">
+<link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/welcome">
+<link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/welcome">
+<link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/welcome">
+<link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/welcome">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:title" content="Welcome to AliSearch">
+<meta property="og:description" content="Quick start: how AliSearch shows every AliExpress variant price in search results.">
+<meta property="og:url" content="https://alisearch.github.io/welcome">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else if(path==='/welcome')twin='/'+p+'/welcome';else if(path==='/uninstall')twin='/'+p+'/uninstall';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+</script>
+</head>
+<body>
+<div id="lang-banner" class="lang-banner" hidden></div>
+<header><div class="wrap header-bar">
+  <a class="brand" href="/"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="/">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a></nav>
+    <label class="lang-switch"><span class="visually-hidden">Language</span><select data-lang-switch aria-label="Language"><option value="/welcome" data-lang="en" selected>English</option><option value="/es/welcome" data-lang="es">Español</option><option value="/pt-br/welcome" data-lang="pt-br">Português (Brasil)</option><option value="/fr/welcome" data-lang="fr">Français</option></select></label>
+  </div>
+</div></header>
+
+<main class="wrap welcome">
+  <h1>You're ready – here's how it works</h1>
+  <p class="lead">AliSearch shows the real price of every AliExpress variant right in the search results, sorted from cheapest.</p>
+
+  <ol class="steps">
+    <li>
+      <strong>Open an AliExpress search</strong>
+      <span>Go to any AliExpress search results page. The AliSearch bar appears above the results.</span>
+    </li>
+    <li>
+      <strong>Expand variants</strong>
+      <span>AliSearch expands product variants and shows each real price, sorted from cheapest.</span>
+    </li>
+    <li>
+      <strong>Spot bait prices</strong>
+      <span>The cheap 10 cm cable trick becomes obvious. Pick the size you actually need.</span>
+    </li>
+  </ol>
+
+  <figure class="demo">
+    <img src="/assets/demo-gif.gif" width="800" height="450" alt="Demo of AliSearch expanding variants and sorting by price">
+  </figure>
+
+  <p class="cta-row">
+    <a class="cta" href="https://www.aliexpress.com/w/wholesale-usb-c-cable.html" rel="noopener noreferrer" target="_blank">Try it now</a>
+  </p>
+  <p class="muted-hint">Opens a sample AliExpress search so you can see the bar in about ten seconds.</p>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 AliSearch</span>
+  <span><a href="/">Home</a> · <a href="/support">Support</a> · <a href="/privacy">Privacy policy</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+</body>
+</html>

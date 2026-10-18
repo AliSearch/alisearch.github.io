@@ -1,15 +1,15 @@
 # alisearch.github.io
 
-Website of the [AliSearch](https://alisearch.github.io/) Chrome extension: home page, support page and privacy policy. Served by GitHub Pages from `main` / root.
+Website of the [AliSearch](https://alisearch.github.io/) Chrome extension: home, support, privacy, install welcome and uninstall survey. Served by GitHub Pages from `main` / root.
 
 ## Languages
 
-| Language | Home | Support | Privacy |
-|---|---|---|---|
-| English (default) | `/` | `/support` | `/privacy` |
-| Español | `/es/` | `/es/support` | `/es/privacy` |
-| Português (Brasil) | `/pt-br/` | `/pt-br/support` | `/pt-br/privacy` |
-| Français | `/fr/` | `/fr/support` | `/fr/privacy` |
+| Language | Home | Support | Privacy | Welcome | Uninstall |
+|---|---|---|---|---|---|
+| English (default) | `/` | `/support` | `/privacy` | `/welcome` | `/uninstall` |
+| Español | `/es/` | `/es/support` | `/es/privacy` | `/es/welcome` | `/es/uninstall` |
+| Português (Brasil) | `/pt-br/` | `/pt-br/support` | `/pt-br/privacy` | `/pt-br/welcome` | `/pt-br/uninstall` |
+| Français | `/fr/` | `/fr/support` | `/fr/privacy` | `/fr/welcome` | `/fr/uninstall` |
 
 Source of truth for copy: `i18n/<lang>.json` + `templates/*.html`. Generated HTML is committed (no GitHub Pages build step).
 

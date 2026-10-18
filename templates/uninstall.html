@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{uninstall.title}}</title>
+<meta name="description" content="{{uninstall.description}}">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang_links}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alternates}}
+<meta property="og:title" content="{{uninstall.og_title}}">
+<meta property="og:description" content="{{uninstall.og_description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+{{pref_redirect_script}}
+</head>
+<body>
+{{lang_banner_slot}}
+<header><div class="wrap header-bar">
+  <a class="brand" href="{{home_href}}"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="{{home_href}}">{{nav.home}}</a><a href="{{support_href}}">{{nav.support}}</a><a href="{{privacy_href}}">{{nav.privacy}}</a></nav>
+    {{lang_switcher}}
+  </div>
+</div></header>
+
+<main class="wrap uninstall">
+  <h1>{{uninstall.h1}}</h1>
+  <p class="lead">{{uninstall.lead}}</p>
+
+  <form id="uninstall-form" class="uninstall-form" novalidate>
+    <fieldset>
+      <legend class="visually-hidden">{{uninstall.reasons_legend}}</legend>
+      <div class="reason-list" role="radiogroup" aria-label="{{uninstall.reasons_legend}}">
+        <label class="reason"><input type="radio" name="reason" value="didnt_understand"> {{uninstall.reason_didnt_understand}}</label>
+        <label class="reason"><input type="radio" name="reason" value="too_slow"> {{uninstall.reason_too_slow}}</label>
+        <label class="reason"><input type="radio" name="reason" value="captcha"> {{uninstall.reason_captcha}}</label>
+        <label class="reason"><input type="radio" name="reason" value="no_cheaper"> {{uninstall.reason_no_cheaper}}</label>
+        <label class="reason"><input type="radio" name="reason" value="other"> {{uninstall.reason_other}}</label>
+      </div>
+    </fieldset>
+    <label class="details-label" for="uninstall-details">{{uninstall.details_label}}</label>
+    <textarea id="uninstall-details" name="details" rows="3" maxlength="2000" placeholder="{{uninstall.details_placeholder}}"></textarea>
+    <button type="submit" class="cta" id="uninstall-submit">{{uninstall.submit}}</button>
+    <p class="form-error" id="uninstall-error" hidden>{{uninstall.error_reason}}</p>
+    <p class="muted-hint">{{uninstall.privacy_note}}</p>
+  </form>
+
+  <div id="uninstall-thanks" class="uninstall-thanks note" hidden>
+    <h2>{{uninstall.thanks_h2}}</h2>
+    <p>{{uninstall.thanks_p}}</p>
+    <p><a href="{{home_href}}">{{uninstall.back_home}}</a></p>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <span>{{footer.copyright}}</span>
+  <span><a href="{{home_href}}">{{footer.home}}</a> · <a href="{{support_href}}">{{footer.support}}</a> · <a href="{{privacy_href}}">{{footer.privacy_policy}}</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+<script src="/assets/uninstall.js" defer></script>
+</body>
+</html>
