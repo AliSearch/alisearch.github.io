@@ -16,13 +16,14 @@ const STORE_CAMPAIGNS = ['hero', 'footer', 'support'];
 
 /**
  * @typedef {{ path: string, htmlLang: string, hreflang: string, ogLocale: string, storeHl: string, utmMedium: string, i18nFile: string, flag: string }} Locale
+ * flag = SVG basename under /assets/flags/ (emoji flags do not render in Windows <select>)
  * @type {Locale[]}
  */
 const LOCALES = [
-  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: 'en', utmMedium: 'en', i18nFile: 'en.json', flag: '🇬🇧' },
-  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', utmMedium: 'es', i18nFile: 'es.json', flag: '🇪🇸' },
-  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', utmMedium: 'pt-br', i18nFile: 'pt-br.json', flag: '🇧🇷' },
-  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json', flag: '🇫🇷' },
+  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: 'en', utmMedium: 'en', i18nFile: 'en.json', flag: 'gb' },
+  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', utmMedium: 'es', i18nFile: 'es.json', flag: 'es' },
+  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', utmMedium: 'pt-br', i18nFile: 'pt-br.json', flag: 'br' },
+  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json', flag: 'fr' },
 ];
 
 const PAGES = ['index', 'support', 'privacy', 'welcome', 'uninstall'];
@@ -127,16 +128,27 @@ function ogLocaleAlternates(currentOg) {
     .join('\n');
 }
 
+function flagImg(flagCode) {
+  return `<img class="lang-flag" src="/assets/flags/${escapeHtmlAttr(flagCode)}.svg" alt="" width="18" height="12" decoding="async">`;
+}
+
 function langSwitcher(currentPath, page, dictsByPath) {
-  const options = LOCALES.map((loc) => {
-    const native = dictsByPath[loc.path || 'en'].lang_native;
-    const selected = loc.path === currentPath ? ' selected' : '';
-    const href = pageHref(loc.path, page);
-    const labelText = `${loc.flag} ${native}`;
-    return `<option value="${escapeHtmlAttr(href)}" data-lang="${escapeHtmlAttr(loc.path || 'en')}"${selected}>${escapeHtmlAttr(labelText)}</option>`;
-  }).join('');
+  const current = LOCALES.find((l) => l.path === currentPath) || LOCALES[0];
+  const currentNative = dictsByPath[current.path || 'en'].lang_native;
   const label = dictsByPath[currentPath || 'en'].nav.lang_label;
-  return `<label class="lang-switch"><span class="visually-hidden">${escapeHtmlAttr(label)}</span><select data-lang-switch aria-label="${escapeHtmlAttr(label)}">${options}</select></label>`;
+  const items = LOCALES.map((loc) => {
+    const native = dictsByPath[loc.path || 'en'].lang_native;
+    const href = pageHref(loc.path, page);
+    const lang = loc.path || 'en';
+    const currentAttr = loc.path === currentPath ? ' aria-current="true"' : '';
+    return `<li role="none"><a role="option" href="${escapeHtmlAttr(href)}" data-lang="${escapeHtmlAttr(lang)}"${currentAttr}>${flagImg(loc.flag)}<span>${escapeHtmlAttr(native)}</span></a></li>`;
+  }).join('');
+  return (
+    `<details class="lang-switch" data-lang-switch>` +
+    `<summary aria-label="${escapeHtmlAttr(label)}">${flagImg(current.flag)}<span>${escapeHtmlAttr(currentNative)}</span></summary>` +
+    `<ul role="listbox" aria-label="${escapeHtmlAttr(label)}">${items}</ul>` +
+    `</details>`
+  );
 }
 
 function prefRedirectScript(localePath) {

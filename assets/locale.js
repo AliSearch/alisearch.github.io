@@ -3,11 +3,12 @@
 
   var STORAGE_LANG = 'alisearch.lang';
   var STORAGE_DISMISS = 'alisearch.lang.dismissed';
+  /** flag = /assets/flags/<code>.svg (SVG; emoji flags fail on Windows) */
   var SUPPORTED = {
-    es: { path: 'es', native: 'Español', flag: '🇪🇸' },
-    'pt-br': { path: 'pt-br', native: 'Português (Brasil)', flag: '🇧🇷' },
-    fr: { path: 'fr', native: 'Français', flag: '🇫🇷' },
-    en: { path: '', native: 'English', flag: '🇬🇧' },
+    es: { path: 'es', native: 'Español', flag: 'es' },
+    'pt-br': { path: 'pt-br', native: 'Português (Brasil)', flag: 'br' },
+    fr: { path: 'fr', native: 'Français', flag: 'fr' },
+    en: { path: '', native: 'English', flag: 'gb' },
   };
 
   var BANNER_COPY = {
@@ -80,6 +81,14 @@
     return (prefix || '') + '/' + page;
   }
 
+  function flagImgHtml(flagCode) {
+    return (
+      '<img class="lang-flag" src="/assets/flags/' +
+      flagCode +
+      '.svg" alt="" width="18" height="12" decoding="async">'
+    );
+  }
+
   function matchSuggestedLang() {
     var list = navigator.languages && navigator.languages.length
       ? navigator.languages
@@ -97,13 +106,24 @@
   }
 
   function bindLangSwitcher() {
-    var select = document.querySelector('[data-lang-switch]');
-    if (!select) return;
-    select.addEventListener('change', function () {
-      var opt = select.options[select.selectedIndex];
-      var lang = opt.getAttribute('data-lang') || 'en';
-      storageSet(STORAGE_LANG, lang);
-      location.href = opt.value;
+    var root = document.querySelector('[data-lang-switch]');
+    if (!root) return;
+
+    root.addEventListener('click', function (e) {
+      var link = e.target.closest('a[data-lang]');
+      if (!link || !root.contains(link)) return;
+      e.preventDefault();
+      storageSet(STORAGE_LANG, link.getAttribute('data-lang') || 'en');
+      location.href = link.getAttribute('href');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!root.open) return;
+      if (!root.contains(e.target)) root.open = false;
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && root.open) root.open = false;
     });
   }
 
@@ -112,12 +132,16 @@
     if (!el) return;
     var copy = BANNER_COPY[suggested] || BANNER_COPY.en;
     var info = SUPPORTED[suggested];
-    var langLabel = info.flag ? info.flag + ' ' + info.native : info.native;
+    var langLabel =
+      flagImgHtml(info.flag) +
+      '<span class="lang-banner-name">' +
+      info.native +
+      '</span>';
     var msg = copy.message.replace('{lang}', langLabel);
     el.hidden = false;
     el.innerHTML =
       '<div class="wrap lang-banner-inner">' +
-      '<span>' +
+      '<span class="lang-banner-msg">' +
       msg +
       '</span>' +
       '<span class="lang-banner-actions">' +
