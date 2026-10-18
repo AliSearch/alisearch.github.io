@@ -4,10 +4,10 @@
   var STORAGE_LANG = 'alisearch.lang';
   var STORAGE_DISMISS = 'alisearch.lang.dismissed';
   var SUPPORTED = {
-    es: { path: 'es', native: 'Español' },
-    'pt-br': { path: 'pt-br', native: 'Português (Brasil)' },
-    fr: { path: 'fr', native: 'Français' },
-    en: { path: '', native: 'English' },
+    es: { path: 'es', native: 'Español', flag: '🇪🇸' },
+    'pt-br': { path: 'pt-br', native: 'Português (Brasil)', flag: '🇧🇷' },
+    fr: { path: 'fr', native: 'Français', flag: '🇫🇷' },
+    en: { path: '', native: 'English', flag: '🇬🇧' },
   };
 
   var BANNER_COPY = {
@@ -111,8 +111,9 @@
     var el = document.getElementById('lang-banner');
     if (!el) return;
     var copy = BANNER_COPY[suggested] || BANNER_COPY.en;
-    var native = SUPPORTED[suggested].native;
-    var msg = copy.message.replace('{lang}', native);
+    var info = SUPPORTED[suggested];
+    var langLabel = info.flag ? info.flag + ' ' + info.native : info.native;
+    var msg = copy.message.replace('{lang}', langLabel);
     el.hidden = false;
     el.innerHTML =
       '<div class="wrap lang-banner-inner">' +
