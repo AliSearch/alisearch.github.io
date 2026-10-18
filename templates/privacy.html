@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{privacy.title}}</title>
+<meta name="description" content="{{privacy.description}}">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang_links}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alternates}}
+<meta property="og:title" content="{{privacy.og_title}}">
+<meta property="og:description" content="{{privacy.og_description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+{{pref_redirect_script}}
+</head>
+<body>
+{{lang_banner_slot}}
+<header><div class="wrap header-bar">
+  <a class="brand" href="{{home_href}}"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="{{home_href}}">{{nav.home}}</a><a href="{{support_href}}">{{nav.support}}</a><a href="{{privacy_href}}" aria-current="page">{{nav.privacy}}</a></nav>
+    {{lang_switcher}}
+  </div>
+</div></header>
+
+<main class="wrap">
+  <h1>{{privacy.h1}}</h1>
+  <p class="lead">{{privacy.last_updated}}</p>
+  {{privacy_authoritative_block}}
+
+  <p class="note">{{privacy.short}}</p>
+
+  <h2>{{privacy.who_h2}}</h2>
+  <p>{{privacy.who_p}}</p>
+
+  <h2>{{privacy.stays_h2}}</h2>
+  <ul>
+    <li>{{privacy.stays_li1}}</li>
+    <li>{{privacy.stays_li2}}</li>
+    <li>{{privacy.stays_li3}}</li>
+  </ul>
+
+  <h2>{{privacy.receive_h2}}</h2>
+  <table>
+    <tr><th>{{privacy.th_when}}</th><th>{{privacy.th_what}}</th><th>{{privacy.th_why}}</th><th>{{privacy.th_how_long}}</th></tr>
+    <tr>
+      <td>{{privacy.row1_when}}</td>
+      <td>{{privacy.row1_what}}</td>
+      <td>{{privacy.row1_why}}</td>
+      <td>{{privacy.row1_how_long}}</td>
+    </tr>
+    <tr>
+      <td>{{privacy.row2_when}}</td>
+      <td>{{privacy.row2_what}}</td>
+      <td>{{privacy.row2_why}}</td>
+      <td>{{privacy.row2_how_long}}</td>
+    </tr>
+  </table>
+  <p>{{privacy.receive_p}}</p>
+
+  <h2>{{privacy.providers_h2}}</h2>
+  <ul>
+    <li>{{privacy.providers_li1}}</li>
+    <li>{{privacy.providers_li2}}</li>
+    <li>{{privacy.providers_li3}}</li>
+  </ul>
+
+  <h2>{{privacy.affiliate_h2}}</h2>
+  <p>{{privacy.affiliate_p}}</p>
+
+  <h2>{{privacy.legal_h2}}</h2>
+  <ul>
+    <li>{{privacy.legal_li1}}</li>
+    <li>{{privacy.legal_li2}}</li>
+  </ul>
+
+  <h2>{{privacy.rights_h2}}</h2>
+  <p>{{privacy.rights_p}}</p>
+
+  <h2>{{privacy.children_h2}}</h2>
+  <p>{{privacy.children_p}}</p>
+
+  <h2>{{privacy.changes_h2}}</h2>
+  <p>{{privacy.changes_p}}</p>
+</main>
+
+<footer><div class="wrap">
+  <span>{{footer.copyright}}</span>
+  <span><a href="{{home_href}}">{{footer.home}}</a> · <a href="{{support_href}}">{{footer.support}}</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+</body>
+</html>

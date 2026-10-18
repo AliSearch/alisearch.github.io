@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{support.title}}</title>
+<meta name="description" content="{{support.description}}">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang_links}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alternates}}
+<meta property="og:title" content="{{support.og_title}}">
+<meta property="og:description" content="{{support.og_description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+{{pref_redirect_script}}
+</head>
+<body>
+{{lang_banner_slot}}
+<header><div class="wrap header-bar">
+  <a class="brand" href="{{home_href}}"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="{{home_href}}">{{nav.home}}</a><a href="{{support_href}}" aria-current="page">{{nav.support}}</a><a href="{{privacy_href}}">{{nav.privacy}}</a></nav>
+    {{lang_switcher}}
+  </div>
+</div></header>
+
+<main class="wrap">
+  <h1>{{support.h1}}</h1>
+  <p class="lead">{{support.lead}}</p>
+
+  <h2>{{support.faq_h2}}</h2>
+
+  <h3>{{support.q_where}}</h3>
+  <p>{{support.a_where}}</p>
+
+  <h3>{{support.q_tabs}}</h3>
+  <p>{{support.a_tabs}}</p>
+
+  <h3>{{support.q_captcha}}</h3>
+  <p>{{support.a_captcha}}</p>
+
+  <h3>{{support.q_slow}}</h3>
+  <p>{{support.a_slow}}</p>
+
+  <h3>{{support.q_original}}</h3>
+  <p>{{support.a_original}}</p>
+
+  <h3>{{support.q_borders}}</h3>
+  <p>{{support.a_borders}}</p>
+
+  <h3>{{support.q_prices}}</h3>
+  <p>{{support.a_prices}}</p>
+
+  <h3>{{support.q_remove}}</h3>
+  <p>{{support.a_remove}}</p>
+
+  <h2>{{support.report_h2}}</h2>
+  <p>{{support.report_p}}</p>
+  <ul>
+    <li>{{support.report_li1}}</li>
+    <li>{{support.report_li2}}</li>
+    <li>{{support.report_li3}}</li>
+    <li>{{support.report_li4}}</li>
+  </ul>
+</main>
+
+<footer><div class="wrap">
+  <span>{{footer.copyright}}</span>
+  <span><a href="{{home_href}}">{{footer.home}}</a> · <a href="{{privacy_href}}">{{footer.privacy_policy}}</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+</body>
+</html>

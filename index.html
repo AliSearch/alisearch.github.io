@@ -4,11 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="e_t7q0NGFd2Bet-LfRgqa4WmVJSnvoPTN7Yxin9znQ4" />
+
 <title>AliSearch – See the real price of every AliExpress variant</title>
 <meta name="description" content="Free Chrome extension for AliExpress: shows every product variant with its real price right in the search results, sorted from cheapest. Spot bait prices at a glance.">
 <link rel="canonical" href="https://alisearch.github.io/">
+<link rel="alternate" hreflang="en" href="https://alisearch.github.io/">
+<link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/">
+<link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:title" content="AliSearch – See the real price of every AliExpress variant">
 <meta property="og:description" content="Free Chrome extension for AliExpress: shows every product variant with its real price right in the search results, sorted from cheapest. Spot bait prices at a glance.">
 <meta property="og:url" content="https://alisearch.github.io/">
@@ -17,16 +27,23 @@
 <meta property="og:image:height" content="560">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a1a1a">
-<link rel="icon" href="assets/icon-32.png">
+<link rel="icon" href="/assets/icon-32.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AliSearch","applicationCategory":"ShoppingApplication","operatingSystem":"Chrome","description":"Chrome extension that shows every AliExpress product variant with its real price in the search results, sorted from cheapest.","url":"https://alisearch.github.io/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+</script>
 </head>
 <body>
-<header><div class="wrap">
-  <a class="brand" href="./"><img src="assets/icon-128.png" alt="">AliSearch</a>
-  <nav><a href="./" aria-current="page">Home</a><a href="support">Support</a><a href="privacy">Privacy</a></nav>
+<div id="lang-banner" class="lang-banner" hidden></div>
+<header><div class="wrap header-bar">
+  <a class="brand" href="/"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="/" aria-current="page">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a></nav>
+    <label class="lang-switch"><span class="visually-hidden">Language</span><select data-lang-switch aria-label="Language"><option value="/" data-lang="en" selected>English</option><option value="/es/" data-lang="es">Español</option><option value="/pt-br/" data-lang="pt-br">Português (Brasil)</option><option value="/fr/" data-lang="fr">Français</option></select></label>
+  </div>
 </div></header>
 
 <main class="wrap">
@@ -35,7 +52,7 @@
 
   <p><a class="cta" href="https://chromewebstore.google.com/detail/alisearch/fokaimlficgkliplmjoojafijpdicojf" rel="noopener">Add to Chrome</a></p>
 
-  <img class="hero" src="assets/hero.png" width="1400" height="560" alt="A $0.29 cable variant that is only 10 cm long, next to the real variants at $1.89, $2.49 and $2.99">
+  <img class="hero" src="/assets/hero.png" width="1400" height="560" alt="A $0.29 cable variant that is only 10 cm long, next to the real variants at $1.89, $2.49 and $2.99">
 
   <h2>What it does</h2>
   <ul>
@@ -54,7 +71,8 @@
 
 <footer><div class="wrap">
   <span>© 2026 AliSearch</span>
-  <span><a href="support">Support</a> · <a href="privacy">Privacy policy</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+  <span><a href="/support">Support</a> · <a href="/privacy">Privacy policy</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
 </div></footer>
+<script src="/assets/locale.js" defer></script>
 </body>
 </html>

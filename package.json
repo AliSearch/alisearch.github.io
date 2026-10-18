@@ -1,0 +1,9 @@
+{
+  "name": "alisearch.github.io",
+  "private": true,
+  "description": "AliSearch marketing site (GitHub Pages)",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "node scripts/build.js --check"
+  }
+}

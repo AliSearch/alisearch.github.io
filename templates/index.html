@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{search_console_meta}}
+<title>{{index.title}}</title>
+<meta name="description" content="{{index.description}}">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang_links}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alternates}}
+<meta property="og:title" content="{{index.og_title}}">
+<meta property="og:description" content="{{index.og_description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://alisearch.github.io/assets/hero.png">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="560">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/icon-32.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AliSearch","applicationCategory":"ShoppingApplication","operatingSystem":"Chrome","description":"{{index.jsonld_description}}","url":"{{canonical}}","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<link rel="stylesheet" href="/assets/style.css">
+{{pref_redirect_script}}
+</head>
+<body>
+{{lang_banner_slot}}
+<header><div class="wrap header-bar">
+  <a class="brand" href="{{home_href}}"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="{{home_href}}" aria-current="page">{{nav.home}}</a><a href="{{support_href}}">{{nav.support}}</a><a href="{{privacy_href}}">{{nav.privacy}}</a></nav>
+    {{lang_switcher}}
+  </div>
+</div></header>
+
+<main class="wrap">
+  <h1>{{index.h1}}</h1>
+  <p class="lead">{{index.lead}}</p>
+
+  <p><a class="cta" href="{{store_url}}" rel="noopener">{{cta.add_to_chrome}}</a></p>
+
+  <img class="hero" src="/assets/hero.png" width="1400" height="560" alt="{{index.hero_alt}}">
+
+  <h2>{{index.what_h2}}</h2>
+  <ul>
+    <li>{{index.what_li1}}</li>
+    <li>{{index.what_li2}}</li>
+    <li>{{index.what_li3}}</li>
+    <li>{{index.what_li4}}</li>
+    <li>{{index.what_li5}}</li>
+  </ul>
+
+  <h2>{{index.affiliate_h2}}</h2>
+  <p>{{index.affiliate_p}}</p>
+
+  <p class="note">{{index.disclaimer}}</p>
+</main>
+
+<footer><div class="wrap">
+  <span>{{footer.copyright}}</span>
+  <span><a href="{{support_href}}">{{footer.support}}</a> · <a href="{{privacy_href}}">{{footer.privacy_policy}}</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+</div></footer>
+<script src="/assets/locale.js" defer></script>
+</body>
+</html>

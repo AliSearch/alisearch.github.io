@@ -6,8 +6,17 @@
 <title>AliSearch support – help and FAQ</title>
 <meta name="description" content="Help for the AliSearch Chrome extension: where it works, why tabs open in the background, CAPTCHA, settings, and how to report a problem.">
 <link rel="canonical" href="https://alisearch.github.io/support">
+<link rel="alternate" hreflang="en" href="https://alisearch.github.io/support">
+<link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/support">
+<link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/support">
+<link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/support">
+<link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/support">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:title" content="AliSearch support – help and FAQ">
 <meta property="og:description" content="Help for the AliSearch Chrome extension: where it works, why tabs open in the background, CAPTCHA, settings, and how to report a problem.">
 <meta property="og:url" content="https://alisearch.github.io/support">
@@ -16,18 +25,25 @@
 <meta property="og:image:height" content="560">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a1a1a">
-<link rel="icon" href="assets/icon-32.png">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+</script>
 </head>
 <body>
-<header><div class="wrap">
-  <a class="brand" href="./"><img src="assets/icon-128.png" alt="">AliSearch</a>
-  <nav><a href="./">Home</a><a href="support" aria-current="page">Support</a><a href="privacy">Privacy</a></nav>
+<div id="lang-banner" class="lang-banner" hidden></div>
+<header><div class="wrap header-bar">
+  <a class="brand" href="/"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="/">Home</a><a href="/support" aria-current="page">Support</a><a href="/privacy">Privacy</a></nav>
+    <label class="lang-switch"><span class="visually-hidden">Language</span><select data-lang-switch aria-label="Language"><option value="/support" data-lang="en" selected>English</option><option value="/es/support" data-lang="es">Español</option><option value="/pt-br/support" data-lang="pt-br">Português (Brasil)</option><option value="/fr/support" data-lang="fr">Français</option></select></label>
+  </div>
 </div></header>
 
 <main class="wrap">
   <h1>Support</h1>
-  <p class="lead">Something not working, or a question? Check the answers below, or write to <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a>.</p>
+  <p class="lead">Something not working, or a question? Check the answers below, or write to <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a>. We answer support e-mail in English.</p>
 
   <h2>Frequently asked questions</h2>
 
@@ -67,7 +83,8 @@
 
 <footer><div class="wrap">
   <span>© 2026 AliSearch</span>
-  <span><a href="./">Home</a> · <a href="privacy">Privacy policy</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+  <span><a href="/">Home</a> · <a href="/privacy">Privacy policy</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
 </div></footer>
+<script src="/assets/locale.js" defer></script>
 </body>
 </html>

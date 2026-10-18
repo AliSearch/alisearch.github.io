@@ -6,8 +6,17 @@
 <title>AliSearch privacy policy</title>
 <meta name="description" content="What data the AliSearch Chrome extension handles, why, and for how long. No ads, no analytics, no tracking.">
 <link rel="canonical" href="https://alisearch.github.io/privacy">
+<link rel="alternate" hreflang="en" href="https://alisearch.github.io/privacy">
+<link rel="alternate" hreflang="es" href="https://alisearch.github.io/es/privacy">
+<link rel="alternate" hreflang="pt-BR" href="https://alisearch.github.io/pt-br/privacy">
+<link rel="alternate" hreflang="fr" href="https://alisearch.github.io/fr/privacy">
+<link rel="alternate" hreflang="x-default" href="https://alisearch.github.io/privacy">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AliSearch">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:title" content="AliSearch privacy policy">
 <meta property="og:description" content="What data the AliSearch Chrome extension handles, why, and for how long. No ads, no analytics, no tracking.">
 <meta property="og:url" content="https://alisearch.github.io/privacy">
@@ -16,18 +25,26 @@
 <meta property="og:image:height" content="560">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a1a1a">
-<link rel="icon" href="assets/icon-32.png">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="/assets/icon-32.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script>
+(function(){try{var p=localStorage.getItem('alisearch.lang');if(!p||p==='en')return;var m={'es':1,'pt-br':1,'fr':1};if(!m[p])return;var path=location.pathname.replace(/\/+$/,'')||'/';var twin;if(path==='/'||path==='')twin='/'+p+'/';else if(path==='/support')twin='/'+p+'/support';else if(path==='/privacy')twin='/'+p+'/privacy';else return;location.replace(twin+location.search+location.hash);}catch(e){}})();
+</script>
 </head>
 <body>
-<header><div class="wrap">
-  <a class="brand" href="./"><img src="assets/icon-128.png" alt="">AliSearch</a>
-  <nav><a href="./">Home</a><a href="support">Support</a><a href="privacy" aria-current="page">Privacy</a></nav>
+<div id="lang-banner" class="lang-banner" hidden></div>
+<header><div class="wrap header-bar">
+  <a class="brand" href="/"><img src="/assets/icon-128.png" alt="">AliSearch</a>
+  <div class="header-right">
+    <nav><a href="/">Home</a><a href="/support">Support</a><a href="/privacy" aria-current="page">Privacy</a></nav>
+    <label class="lang-switch"><span class="visually-hidden">Language</span><select data-lang-switch aria-label="Language"><option value="/privacy" data-lang="en" selected>English</option><option value="/es/privacy" data-lang="es">Español</option><option value="/pt-br/privacy" data-lang="pt-br">Português (Brasil)</option><option value="/fr/privacy" data-lang="fr">Français</option></select></label>
+  </div>
 </div></header>
 
 <main class="wrap">
   <h1>Privacy policy</h1>
   <p class="lead">Last updated: 16 October 2026</p>
+  
 
   <p class="note"><strong>In short:</strong> AliSearch has no ads, no analytics and no tracking. It works on AliExpress search pages only. Data leaves your browser in two cases: when you open a product through AliSearch (to create the affiliate link), and when you choose to send us feedback.</p>
 
@@ -87,7 +104,8 @@
 
 <footer><div class="wrap">
   <span>© 2026 AliSearch</span>
-  <span><a href="./">Home</a> · <a href="support">Support</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
+  <span><a href="/">Home</a> · <a href="/support">Support</a> · <a href="mailto:alisearch.extension@gmail.com">alisearch.extension@gmail.com</a></span>
 </div></footer>
+<script src="/assets/locale.js" defer></script>
 </body>
 </html>
