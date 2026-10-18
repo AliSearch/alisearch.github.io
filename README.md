@@ -13,6 +13,8 @@ Website of the [AliSearch](https://alisearch.github.io/) Chrome extension: home 
 
 Source of truth for copy: `i18n/<lang>.json` + `templates/*.html`. Generated HTML is committed (no GitHub Pages build step).
 
+Store “Add to Chrome” CTAs are built in `scripts/build.js` (`buildStoreUrl`): `hl` (Store locale) plus `utm_source=website`, `utm_medium=<lang>`, `utm_campaign=<placement>` (`hero` / `footer` / `support`). Template placeholders: `{{store_url_hero}}`, `{{store_url_footer}}`, `{{store_url_support}}` (and `{{store_url}}` = hero).
+
 ## Build
 
 ```bash
