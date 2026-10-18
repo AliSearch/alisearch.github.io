@@ -11,12 +11,18 @@ const STORE_BASE =
 const EMAIL = 'alisearch.extension@gmail.com';
 const EMAIL_LINK = `<a href="mailto:${EMAIL}">${EMAIL}</a>`;
 
-/** @type {{ path: string, htmlLang: string, hreflang: string, ogLocale: string, storeHl: string|null, i18nFile: string }[]} */
+/** Store CTA placement → utm_campaign (keep in sync with marketing utm/README.md). */
+const STORE_CAMPAIGNS = ['hero', 'footer', 'support'];
+
+/**
+ * @typedef {{ path: string, htmlLang: string, hreflang: string, ogLocale: string, storeHl: string, utmMedium: string, i18nFile: string }} Locale
+ * @type {Locale[]}
+ */
 const LOCALES = [
-  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: null, i18nFile: 'en.json' },
-  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', i18nFile: 'es.json' },
-  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', i18nFile: 'pt-br.json' },
-  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', i18nFile: 'fr.json' },
+  { path: '', htmlLang: 'en', hreflang: 'en', ogLocale: 'en_US', storeHl: 'en', utmMedium: 'en', i18nFile: 'en.json' },
+  { path: 'es', htmlLang: 'es', hreflang: 'es', ogLocale: 'es_ES', storeHl: 'es', utmMedium: 'es', i18nFile: 'es.json' },
+  { path: 'pt-br', htmlLang: 'pt-BR', hreflang: 'pt-BR', ogLocale: 'pt_BR', storeHl: 'pt-BR', utmMedium: 'pt-br', i18nFile: 'pt-br.json' },
+  { path: 'fr', htmlLang: 'fr', hreflang: 'fr', ogLocale: 'fr_FR', storeHl: 'fr', utmMedium: 'fr', i18nFile: 'fr.json' },
 ];
 
 const PAGES = ['index', 'support', 'privacy'];
@@ -143,6 +149,36 @@ function langBannerSlot() {
   return '<div id="lang-banner" class="lang-banner" hidden></div>';
 }
 
+/**
+ * Chrome Web Store install URL with hl + UTM for campaign attribution.
+ * @param {Locale} loc
+ * @param {string} campaign  button placement: hero | footer | support
+ */
+function buildStoreUrl(loc, campaign) {
+  if (!STORE_CAMPAIGNS.includes(campaign)) {
+    throw new Error(`Unknown store campaign: ${campaign}`);
+  }
+  const q = new URLSearchParams({
+    hl: loc.storeHl,
+    utm_source: 'website',
+    utm_medium: loc.utmMedium,
+    utm_campaign: campaign,
+  });
+  return `${STORE_BASE}?${q.toString()}`;
+}
+
+/** @param {Locale} loc */
+function storeUrlVars(loc) {
+  /** @type {Record<string, string>} */
+  const vars = {};
+  for (const campaign of STORE_CAMPAIGNS) {
+    vars[`store_url_${campaign}`] = buildStoreUrl(loc, campaign);
+  }
+  // Default alias used by pages with a single primary CTA
+  vars.store_url = vars.store_url_hero;
+  return vars;
+}
+
 function assertHreflang(html, page) {
   for (const loc of LOCALES) {
     const href = pageUrl(loc.path, page);
@@ -154,6 +190,22 @@ function assertHreflang(html, page) {
   const xd = `hreflang="x-default" href="${pageUrl('', page)}"`;
   if (!html.includes(xd)) {
     throw new Error(`Missing x-default on ${page}`);
+  }
+}
+
+/** Every generated index must carry the hero CTA with hl + UTM. */
+function assertStoreCtas(html, loc) {
+  const expected = buildStoreUrl(loc, 'hero');
+  if (!html.includes(`href="${expected}"`)) {
+    throw new Error(`Missing store CTA for ${loc.hreflang}: expected href="${expected}"`);
+  }
+  const hrefRe = /href="(https:\/\/chromewebstore\.google\.com\/[^"]+)"/g;
+  let m;
+  while ((m = hrefRe.exec(html)) !== null) {
+    const url = m[1];
+    if (!url.includes('utm_source=website') || !/[?&]hl=/.test(url)) {
+      throw new Error(`Store link missing hl/UTM (${loc.hreflang}): ${url}`);
+    }
   }
 }
 
@@ -200,7 +252,6 @@ function generateAll(outRoot) {
     const dict = dicts[dictKey];
     for (const page of PAGES) {
       const template = read(path.join(ROOT, 'templates', `${page}.html`));
-      const storeUrl = loc.storeHl ? `${STORE_BASE}?hl=${encodeURIComponent(loc.storeHl)}` : STORE_BASE;
       const privacyNote =
         page === 'privacy' && loc.path
           ? `<p class="note privacy-authority">${applyPlaceholders(dict.privacy.authoritative_note, dict)}</p>`
@@ -212,7 +263,7 @@ function generateAll(outRoot) {
         hreflang_links: hreflangLinks(page),
         og_locale: loc.ogLocale,
         og_locale_alternates: ogLocaleAlternates(loc.ogLocale),
-        store_url: storeUrl,
+        ...storeUrlVars(loc),
         home_href: pageHref(loc.path, 'index'),
         support_href: pageHref(loc.path, 'support'),
         privacy_href: pageHref(loc.path, 'privacy'),
@@ -228,6 +279,7 @@ function generateAll(outRoot) {
 
       const html = renderTemplate(template, vars, dict);
       assertHreflang(html, page);
+      if (page === 'index') assertStoreCtas(html, loc);
       const rel = outputRelPath(loc.path, page);
       files[rel] = html.endsWith('\n') ? html : html + '\n';
     }
