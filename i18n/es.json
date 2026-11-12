@@ -85,13 +85,13 @@
     "step2_body": "AliSearch expande las variantes del producto y muestra cada precio real, ordenado del más barato.",
     "step3_title": "Detecta precios cebo",
     "step3_body": "El truco del cable barato de 10 cm se vuelve obvio. Elige el tamaño que realmente necesitas.",
-    "wait_note": "La primera pasada puede tardar un poco: AliSearch abre las variantes en segundo plano. Si aparece una comprobación de «¿eres humano?», complétala; no es un fallo, y AliSearch continuará.",
+    "wait_note": "La primera pasada puede tardar un poco — AliSearch abre las variantes en segundo plano. Si aparece una comprobación de «¿eres humano?», AliSearch trae esa página al frente; complétala — no es un fallo, y AliSearch continuará.",
     "demo_alt": "Demo de AliSearch expandiendo variantes y ordenando por precio",
     "cta": "Probar ahora",
     "cta_hint": "Abre una búsqueda de ejemplo de AliExpress para ver la barra en unos diez segundos.",
     "try_url": "https://www.aliexpress.com/w/wholesale-usb-c-cable.html",
-    "affiliate_note": "AliSearch es gratis y se mantiene con enlaces de afiliado: si compras a través de la vista de AliSearch, AliExpress puede pagarnos una pequeña comisión. Los precios no cambian nunca.",
-    "affiliate_privacy": "Política de privacidad"
+    "affiliate_note": "AliSearch es gratis y se mantiene con enlaces de afiliado. Cuando haces clic en un producto en la vista de AliSearch y lo compras, podemos recibir una pequeña comisión de AliExpress, sin coste adicional para ti. Los enlaces de afiliado nunca cambian los precios.",
+    "affiliate_privacy": "Detalles de afiliados en la política de privacidad"
   },
   "uninstall": {
     "title": "AliSearch eliminado – opinión opcional",

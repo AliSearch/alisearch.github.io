@@ -85,13 +85,13 @@
     "step2_body": "AliSearch expands product variants and shows each real price, sorted from cheapest.",
     "step3_title": "Spot bait prices",
     "step3_body": "The cheap 10 cm cable trick becomes obvious. Pick the size you actually need.",
-    "wait_note": "The first pass can take a little while — AliSearch opens variants in the background. If an “are you human” check appears, complete it; that isn’t a bug, and AliSearch will continue.",
+    "wait_note": "The first pass can take a little while — AliSearch opens variants in the background. If an “are you human” check appears, AliSearch brings that page to the front; complete it — that isn’t a bug, and AliSearch will continue.",
     "demo_alt": "Demo of AliSearch expanding variants and sorting by price",
     "cta": "Try it now",
     "cta_hint": "Opens a sample AliExpress search so you can see the bar in about ten seconds.",
     "try_url": "https://www.aliexpress.com/w/wholesale-usb-c-cable.html",
-    "affiliate_note": "AliSearch is free and kept alive by affiliate links: when you buy through the AliSearch view, AliExpress may pay us a small commission. Prices never change.",
-    "affiliate_privacy": "Privacy policy"
+    "affiliate_note": "AliSearch is free and kept alive by affiliate links. When you click a product in the AliSearch view and buy it, we may earn a small commission from AliExpress, at no extra cost to you. Affiliate links never change prices.",
+    "affiliate_privacy": "Affiliate details in the privacy policy"
   },
   "uninstall": {
     "title": "AliSearch removed – optional feedback",
