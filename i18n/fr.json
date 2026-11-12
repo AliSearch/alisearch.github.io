@@ -85,10 +85,13 @@
     "step2_body": "AliSearch développe les variantes du produit et affiche chaque vrai prix, trié du moins cher.",
     "step3_title": "Repérez les prix d’appel",
     "step3_body": "L’astuce du câble bon marché de 10 cm devient évidente. Choisissez la taille dont vous avez vraiment besoin.",
+    "wait_note": "Le premier passage peut prendre un moment — AliSearch ouvre les variantes en arrière-plan. Si une vérification « êtes-vous humain » apparaît, terminez-la ; ce n’est pas un bug, et AliSearch continuera.",
     "demo_alt": "Démo d’AliSearch développant les variantes et triant par prix",
     "cta": "Essayer maintenant",
     "cta_hint": "Ouvre une recherche AliExpress d’exemple pour voir la barre en une dizaine de secondes.",
-    "try_url": "https://www.aliexpress.com/w/wholesale-usb-c-cable.html"
+    "try_url": "https://www.aliexpress.com/w/wholesale-usb-c-cable.html",
+    "affiliate_note": "AliSearch est gratuit et vit grâce aux liens d’affiliation : quand vous achetez via la vue AliSearch, AliExpress peut nous verser une petite commission. Les prix ne changent jamais.",
+    "affiliate_privacy": "Politique de confidentialité"
   },
   "uninstall": {
     "title": "AliSearch désinstallé – avis facultatif",

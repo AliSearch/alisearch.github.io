@@ -166,6 +166,8 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: s
 }
 .cta-row { margin: 20px 0 8px; }
 .muted-hint { color: var(--muted); font-size: 15px; margin-top: 0; }
+.wait-note { margin: -8px 0 0; }
+.affiliate-note { margin-top: 16px; max-width: 42rem; }
 .uninstall-form { margin-top: 20px; display: grid; gap: 12px; }
 .uninstall-form fieldset { border: 0; padding: 0; margin: 0; }
 .reason-list { display: grid; gap: 8px; }
